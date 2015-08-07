@@ -1,0 +1,23 @@
+<h2>Sign Up!</h2>
+
+<form class="sign-up-form" action="/users" method="post">
+  <input type="hidden" name="authenticity_token"
+  value="form_authenticity_token">
+  <label>
+  Email
+  <input type="text" name="user[username]" value="<%=@user.username%>">
+  </label>
+  <br>
+  <label>
+  Password
+  <input type="password" name="user[password]" value="">
+  </label>
+  <br>
+  <br>
+  <input class="input-button" type="submit" value="Sign Up">
+</form>
+
+<br>
+<% if !logged_in? %>
+  <%= link_to 'Sign In', new_session_url %>
+<% end %>
