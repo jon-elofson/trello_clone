@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Trello</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<h1>Trello</h1>
-<br>
-<br>
+  <div class="nav-bar">Trello
+</div>
 
-<ul>
+
   <% if flash[:error] %>
+  <ul>
     <% flash[:error].each do |error| %>
     <li class="flash-error"><%= error %></li>
     <% end %>
+    </ul>
   <% end %>
-</ul>
 
 
-
-
-
-<%= yield %>
-
-<% if logged_in? %>
-  <%= link_to 'Logout', destroy_session_url %>
-<% end %>
-
+<%= yield  %>
 
 
 </body>

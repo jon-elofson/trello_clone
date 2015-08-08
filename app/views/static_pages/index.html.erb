@@ -1,0 +1,16 @@
+<% if logged_in? %>
+<div class="logged-in">
+  <%= current_user.username %>
+  <%= button_to "Log Out", "/session",  method: :delete %>
+</div>
+<% end %>
+
+<div id='content'>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    Trello.initialize();
+  });
+</script>

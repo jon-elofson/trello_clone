@@ -1,0 +1,12 @@
+<form action="/api/boards" class="form_new_board" method="post">
+  <p>New Board</p>
+  <input type="hidden" name="authenticity_token"
+  value="form_authenticity_token">
+  <label>
+  Title
+  <input type="text" name="board[name]" value="<%=board.escape('name')%>">
+  </label>
+  <br>
+  <br>
+  <input class="input-button" type="submit" value="Create Board">
+</form>

@@ -1,6 +1,6 @@
 class List < ActiveRecord::Base
 
-  validates :title, :ord, :board_id presence: true
+  validates :title, :ord, :board_id, presence: true
 
   belongs_to :board
 

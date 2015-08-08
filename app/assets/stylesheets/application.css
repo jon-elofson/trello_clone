@@ -14,11 +14,28 @@
  *= require_self
  */
 
-* {
+body {
   list-style: none;
   color: white;
   font-family: arial;
   background-color: lightblue;
+  text-align: center;
+  margin: 0px;
+}
+
+.nav-bar {
+  margin: none;
+  padding: none;
+  text-align: center;
+  height: 80px;
+  display: block;
+  color: lightblue;
+  font-size: 70px;
+  background-color: white;
+}
+
+.nav-bar.logged-in {
+  float: left
 }
 
 input {
@@ -28,9 +45,9 @@ input {
 
 input.input-button {
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 20px;
-  background-color: blue;
+  background-color: pink;
   color: white;
 }
 
@@ -38,6 +55,142 @@ label {
   font-weight: bold;
 }
 
+
+.board-index {
+  list-style: none;
+  position: absolute;
+}
+
+.logged-in {
+  float: right;
+  margin-right: 10px;
+  display: block;
+  text-align: right;
+  color: white;
+  border-radius: none;
+}
+
+.board-index li {
+  display: block;
+  position: relative;
+  float: left;
+  background-color: white;
+  color: lightblue;
+  padding-top: 20px;
+  height: 180px;
+  width: 200px;
+  font-size: 30px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.board-index li.new-board-button {
+  background-color: lightblue;
+  color: white;
+  height: 174px;
+  width: 194px;
+  border: 3px solid white;
+  margin: 20px;
+}
+
+.board-index li.new-board-form {
+  background-color: lightblue;
+  color: white;
+  height: 174px;
+  width: 194px;
+  border: 3px solid white;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.board-index li.new-board-form form{
+  position: relative;
+}
+
+.board-index li.new-board-form form label{
+  font-weight: normal;
+}
+
+
+
+.board-title {
+  text-align: left;
+  margin: 0px;
+  margin-left: 10px;
+  font-size: 60px;
+  line-height: 60px;
+}
+
 .flash-error {
   color: red
+}
+
+.board-buttons {
+  display: block;
+  position: absolute;
+  margin-bottom: 10px;
+}
+
+button {
+  float: left;
+  position: relative;
+  margin: 10px;
+  border: 1px solid white;
+  background-color: lightblue;
+  color: white;
+  border-radius: 2px;
+  font-size: 20px;
+}
+
+.board-lists li{
+  top: 20px;
+  list-style: none;
+  display: block;
+  position: relative;
+  float: left;
+  background-color: white;
+  color: lightblue;
+  padding-top: 20px;
+  height: 200px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.board-lists li div.list-options {
+  font-size: 12px;
+  border-bottom: 1px solid lightgray;
+  position: absolute;
+  width: 300px;
+  text-align: center;
+}
+
+
+
+.board-lists li div.list-options button {
+  font-size: 12px;
+  border: 1px solid lightblue;
+  color: lightblue;
+  background-color: white;
+  margin: 0px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  float: none;
+}
+
+div .new-list-form {
+  top: 20px;
+  list-style: none;
+  display: block;
+  position: relative;
+  float: left;
+  background-color: white;
+  color: lightblue;
+  padding-top: 20px;
+  height: 200px;
+  width: 300px;
+  font-size: 20px;
+  border-radius: 20px;
+  margin: 20px;
 }

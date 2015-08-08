@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     )
     if @user
       login!(@user)
-      redirect_to "#"
+      redirect_to "/#"
     else
       flash.now[:error] = ["Could not find user with username/password"]
       @user = User.new(username: params[:user][:username])

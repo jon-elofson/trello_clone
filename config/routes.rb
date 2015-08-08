@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create,:new]
   namespace :api do
     resources :boards, only: [:create,:show,:update,:index,:destroy]
-    resources :lists, only: [:create, :update,:destroy]
+    resources :lists, only: [:create, :update,:destroy,:index]
     resources :cards, only: [:create,:update,:destroy]
     resources :items, only: [:create,:update,:destroy,:index]
   end
-  root 'sessions#new'
+  root 'static_pages#index'
 end

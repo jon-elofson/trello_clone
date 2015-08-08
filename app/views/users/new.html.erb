@@ -21,3 +21,9 @@
 <% if !logged_in? %>
   <%= link_to 'Sign In', new_session_url %>
 <% end %>
+
+<script>
+$(document).ready(function(){
+  Trello.initialize();
+});
+</script>
