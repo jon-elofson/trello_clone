@@ -1,38 +1,42 @@
-Trello.Views.BoardNew = Backbone.CompositeView.extend({
+Trello.Views.CardNew = Backbone.CompositeView.extend({
 
-  template: JST['board_new'],
+  template: JST['card_new'],
 
   tagName: 'li',
 
   events: {
-    "submit .form-new-board": "newBoardHandler"
+    "submit .new-card-form": "newCardHandler"
+  },
+
+  initialize: function (options) {
+    this.list = options.list;
   },
 
   render: function () {
-    this.$el.addClass('new-board-form');
-    this.$el.html(this.template({board: this.model}));
+    this.$el.html(this.template({card: this.model,list: this.list}));
     return this;
   },
 
-  newBoardHandler: function (e) {
+  newCardHandler: function (e) {
     e.preventDefault();
-    var $form = this.$('.form-new-board');
+    var $form = this.$('.new-card-form');
     var formdata = $form.serializeJSON();
     var that = this;
     this.model.save(formdata, {
       success: function () {
         that.collection.add(that.model);
-        Backbone.history.navigate("", {trigger: true});
+        Backbone.history.navigate("#/boards/" + that.list.escape('board_id'), {trigger: true});
       },
       error: function (model,response) {
         $('.errors').empty();
         response.responseJSON.forEach(function (error) {
           var $li = $("<li>").text(error);
           that.$(".errors").append($li);
-          Backbone.history.navigate("", {trigger: true});
         });
       }
     });
+
+
   }
 
 });

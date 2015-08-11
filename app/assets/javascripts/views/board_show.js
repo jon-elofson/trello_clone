@@ -11,7 +11,7 @@ Trello.Views.BoardShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.model,"sync",this.render);
     this.lists = this.model.lists();
-    this.listenTo(this.lists,"sync add remove",this.render)
+    this.listenTo(this.lists,"sync add remove",this.render);
   },
 
   render: function () {
@@ -19,7 +19,7 @@ Trello.Views.BoardShow = Backbone.CompositeView.extend({
     var that = this;
     this.lists.each(function (list) {
       var view = new Trello.Views.ListShow({model: list});
-      that.addSubview("ul",view);
+      that.addSubview(".board-lists",view);
     });
     return this;
   },
@@ -32,12 +32,12 @@ Trello.Views.BoardShow = Backbone.CompositeView.extend({
     var list = new Trello.Models.List();
     var view = new Trello.Views.ListNew({collection: this.lists,
       model: list,board: this.model});
-    this.addSubview("ul",view,true);
+    this.addSubview(".board-lists",view,true);
   },
 
   deleteBoard: function () {
     this.model.destroy();
-    Backbone.history.navigate("#", {trigger: true});
+    Backbone.history.navigate("", {trigger: true});
   }
 
 

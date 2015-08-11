@@ -21,3 +21,13 @@ Board.all.each do |board|
     @list.save
   end
 end
+
+List.all.each do |list|
+  3.times do |card|
+    @card = Card.new(title: Faker::Address.country,
+      content: Faker::Address.city,
+      ord: card,
+      list_id: list.id )
+    @card.save
+  end
+end

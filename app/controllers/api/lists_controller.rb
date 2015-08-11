@@ -23,7 +23,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    @list = List.new()
+    @list = List.find(params[:id])
     render :json => @list
   end
 

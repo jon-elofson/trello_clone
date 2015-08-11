@@ -1,15 +1,16 @@
 class Api::BoardsController < ApplicationController
 
-  # before_action :ensure_logged_in
+  before_action :ensure_logged_in
+  skip_before_action :verify_authenticity_token
 
   def index
-    @boards = Board.where("user_id = #{current_user.id}")
+    @boards = current_user.boards
     render :json => @boards
   end
 
   def show
     @board = Board.find(params[:id])
-    render :json => @board, include: :lists
+    render :show
   end
 
   def create
@@ -18,7 +19,7 @@ class Api::BoardsController < ApplicationController
     if @board.save
       render :json => @board
     else
-      flash.now[:errors] = @board.errors.full_messages
+        flash.now[:errors] = @board.errors.full_messages
     end
   end
 

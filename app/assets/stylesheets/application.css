@@ -93,6 +93,12 @@ label {
   margin: 20px;
 }
 
+.board-index li.new-board-button.hidden-button {
+  display: none;
+}
+
+
+
 .board-index li.new-board-form {
   background-color: lightblue;
   color: white;
@@ -151,7 +157,8 @@ button {
   background-color: white;
   color: lightblue;
   padding-top: 20px;
-  height: 200px;
+  padding-left: 3px;
+  height: 600px;
   width: 300px;
   font-size: 20px;
   border-radius: 20px;
@@ -178,6 +185,40 @@ button {
   margin-left: 2px;
   float: none;
 }
+
+
+.board-lists li .card-list li{
+  left: -43px;
+  border-bottom: 1px solid lightgray;
+  display: block;
+  position: relative;
+  float: left;
+  text-align: left;
+  background-color: white;
+  color: darkgray;
+  height: 10%;
+  width: 293px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 2px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  top: 40px;
+  font-size: 12px;
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.board-lists li .card-list li.new-card-button{
+  color: pink;
+  padding-top: 2px;
+}
+
+.board-lists li .card-list li form.new-card-form{
+  font-size: 12px;
+}
+
 
 div .new-list-form {
   top: 20px;
